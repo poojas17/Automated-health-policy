@@ -1,2 +1,2 @@
-# Automated-health-policy
-Automated way to issue health policies to people 
+# automated-health-policy
+Automated method to provide health policies to unemployed people

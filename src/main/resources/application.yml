@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  contextPath: /crud
+---
+spring:
+  profiles: local,default
+  social:
+    facebook: 
+      appId: 352128715265442
+      appSecret: KNHEKsv1Ai5q_6fy_cCSapJBKkg
+datasource:
+  crud:
+    url: jdbc:h2:~/test
+    username: SA
+    password:
+    driverClassName: org.h2.Driver
+    defaultSchema:
+    maxPoolSize: 10
+    hibernate:
+      hbm2ddl.method: create-drop
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+---
+spring:
+  profiles: prod
+datasource:
+  crud:
+    url: jdbc:mysql://localhost:3306/crud
+    username: root
+    password: 
+    driverClassName: com.mysql.jdbc.Driver
+    defaultSchema:
+    maxPoolSize: 20
+    hibernate:
+      hbm2ddl.method: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
